@@ -1,4 +1,3 @@
-body { background: red !important; }
 /* Базовые сбросы */
 * {
     margin: 0;
@@ -7,11 +6,35 @@ body { background: red !important; }
 }
 
 body {
-    font-family: 'Courier New', monospace; /* стиль терминала, подходит постапокалипсису */
-    background-color: #0a0c0b;
+    font-family: 'Courier New', monospace;
     color: #c0b9a6;
     line-height: 1.6;
     padding: 20px;
+    
+    /* Фоновое изображение */
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    /* Запасной цвет на время загрузки */
+    background-color: #0a0c0b;
+
+    /* Для позиционирования псевдоэлемента */
+    position: relative;
+}
+
+/* Затемняющая накладка поверх фона */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* регулируй прозрачность (0.3–0.7) */
+    z-index: -1;
 }
 
 header {
@@ -109,4 +132,3 @@ footer {
     color: #6b6b6b;
     border-top: 1px solid #2a2a2a;
 }
-
