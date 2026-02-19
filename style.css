@@ -1,4 +1,4 @@
-/* Базовые сбросы */
+/* ===== Базовые сбросы и переменные ===== */
 * {
     margin: 0;
     padding: 0;
@@ -37,21 +37,114 @@ body::before {
     z-index: -1;
 }
 
-header {
-    text-align: center;
-    padding: 40px 0;
-    border-bottom: 2px solid #8b5a2b;
-    margin-bottom: 40px;
+/* ===== Основной контейнер (меню + контент) ===== */
+.container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: rgba(18, 16, 14, 0.85);  /* полупрозрачный тёмный фон, чтобы читать текст */
+    border: 1px solid #6b4f3c;
+    border-radius: 12px;
+    backdrop-filter: blur(2px); /* лёгкое размытие фона за контейнером */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    min-height: 80vh; /* чтобы контейнер занимал почти всю высоту */
 }
 
-h1 {
+/* ===== Левое меню (сайдбар) ===== */
+.sidebar {
+    width: 260px;
+    background-color: rgba(10, 8, 6, 0.9);
+    padding: 20px 15px;
+    border-right: 3px solid #8b5a2b; /* ржавый акцент */
+    border-radius: 12px 0 0 12px;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(2px);
+}
+
+.sidebar-title {
+    color: #d98c3e;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    border-bottom: 1px solid #8b5a2b;
+    padding-bottom: 10px;
+    text-shadow: 0 0 5px rgba(217,140,62,0.5);
+}
+
+.sidebar-menu {
+    list-style: none;
+}
+
+.sidebar-menu li {
+    margin-bottom: 12px;
+}
+
+.sidebar-menu a {
+    color: #c0b9a6;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.3s;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-menu a:hover {
+    background-color: #3a2e25;
+    border-left-color: #d98c3e;
+    color: #e6b17e;
+    padding-left: 18px;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    font-size: 0.9rem;
+    color: #6b5a4b;
+    text-align: center;
+    border-top: 1px solid #3a2e25;
+    padding-top: 15px;
+}
+
+/* ===== Основной контент ===== */
+.content {
+    flex: 1;
+    padding: 30px;
+    background-color: transparent; /* фон уже задан у .container, здесь прозрачный */
+    color: #d6cdc0;
+}
+
+/* Шапка страницы внутри контента */
+.page-header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #8b5a2b;
+    padding-bottom: 15px;
+}
+
+.page-header h1 {
     font-size: 2.5rem;
     color: #d98c3e;
     text-transform: uppercase;
     letter-spacing: 4px;
     text-shadow: 0 0 5px rgba(217,140,62,0.5);
+    margin-bottom: 5px;
 }
 
+.page-header p {
+    font-size: 1.2rem;
+    color: #a09b8c;
+    font-style: italic;
+}
+
+/* Текст приветствия */
+.welcome-text p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* ===== Стили для карточек (оставлены без изменений) ===== */
 .recruit-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -125,10 +218,40 @@ h1 {
     border: 1px solid #6b4e3a;
 }
 
-footer {
+/* ===== Подвал сайта ===== */
+.site-footer {
     text-align: center;
-    margin-top: 60px;
+    margin-top: 30px;
     padding: 20px;
     color: #6b6b6b;
-    border-top: 1px solid #2a2a2a;
+    border-top: 1px solid #3a2e25;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(18, 16, 14, 0.7);
+    border-radius: 0 0 12px 12px;
+    backdrop-filter: blur(2px);
+    border-left: 1px solid #6b4f3c;
+    border-right: 1px solid #6b4f3c;
+    border-bottom: 1px solid #6b4f3c;
+}
+
+/* ===== Адаптивность для мобильных ===== */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 3px solid #8b5a2b;
+        border-radius: 12px 12px 0 0;
+    }
+    .content {
+        padding: 20px;
+    }
+    .site-footer {
+        border-radius: 0 0 12px 12px;
+        margin-top: 0;
+    }
 }

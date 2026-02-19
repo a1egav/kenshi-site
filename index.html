@@ -3,97 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Уникальные рекруты Kenshi</title>
+    <title>Kenshi — энциклопедия пустошей</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>🔥 Уникальные рекруты Kenshi</h1>
-        <p>Нанимай, прокачивай, не дай им умереть</p>
-    </header>
-
-    <main class="recruit-grid">
-        <!-- Beep -->
-        <div class="card">
-            <img src="https://picsum.photos/200/200?random=1" alt="Beep">
-            <h2>Beep</h2>
-            <p class="faction">Фракция: Беспалые</p>
-            <p class="desc">«Я самый слабый воин! Но я стану самым сильным!»</p>
-            <div class="stats">
-                <span>🗡️ 20</span>
-                <span>🛡️ 20</span>
-                <span>🧠 80</span>
+    <!-- Основной контейнер с меню и контентом -->
+    <div class="container">
+        <!-- Левое меню -->
+        <aside class="sidebar">
+            <h2 class="sidebar-title">📋 Разделы</h2>
+            <nav>
+                <ul class="sidebar-menu">
+                    <li><a href="index.html">🏠 Главная</a></li>
+                    <li><a href="factions.html">⚔️ Фракции</a></li>
+                    <li><a href="recruits.html">🔥 Уникальные рекруты</a></li>
+                    <li><a href="guides.html">📚 Гайды</a></li>
+                    <li><a href="lore.html">📜 Лор</a></li>
+                    <li><a href="screenshots.html">📷 Скриншоты</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Проект по игре Kenshi<br>Сделано фанатом</p>
             </div>
-        </div>
+        </aside>
 
-        <!-- Sadneil -->
-        <div class="card">
-            <img src="https://picsum.photos/200/200?random=2" alt="Sadneil">
-            <h2>Sadneil</h2>
-            <p class="faction">Фракция: Беспалые</p>
-            <p class="desc">Скелет-депрессняк. Ищет свою жену 200 лет.</p>
-            <div class="stats">
-                <span>🗡️ 45</span>
-                <span>🛡️ 30</span>
-                <span>🧠 70</span>
+        <!-- Основная область контента -->
+        <main class="content">
+            <!-- Этот блок будет меняться в зависимости от страницы -->
+            <header class="page-header">
+                <h1>🔥 Добро пожаловать в пустоши!</h1>
+                <p>Всё, что нужно знать о мире Kenshi</p>
+            </header>
+
+            <section class="welcome-text">
+                <p>Здесь будет располагаться контент выбранного раздела. Пока это главная страница – можно написать краткое описание проекта, последние новости или случайный факт об игре.</p>
+                <p>Используй меню слева, чтобы перейти к другим разделам.</p>
+            </section>
+
+            <!-- Пример блока с карточками (закомментирован, пригодится для страницы рекрутов) -->
+            <!--
+            <div class="recruit-grid">
+                ... карточки рекрутов ...
             </div>
-        </div>
+            -->
+        </main>
+    </div>
 
-        <!-- Agnu -->
-        <div class="card">
-            <img src="https://picsum.photos/200/200?random=3" alt="Agnu">
-            <h2>Agnu</h2>
-            <p class="faction">Фракция: Беспалые</p>
-            <p class="desc">«Я БОГ!» — скелет, который верит в своё божественное происхождение.</p>
-            <div class="stats">
-                <span>🗡️ 60</span>
-                <span>🛡️ 40</span>
-                <span>🧠 50</span>
-            </div>
-        </div>
-
-        <!-- Ruka -->
-        <div class="card">
-            <img src="https://picsum.photos/200/200?random=4" alt="Ruka">
-            <h2>Ruka</h2>
-            <p class="faction">Фракция: Шек</p>
-            <p class="desc">Женщина-воин, ищущая свою пропавшую дочь.</p>
-            <div class="stats">
-                <span>🗡️ 55</span>
-                <span>🛡️ 35</span>
-                <span>🧠 60</span>
-            </div>
-        </div>
-
-        <!-- Burn -->
-        <div class="card">
-            <img src="https://picsum.photos/200/200?random=5" alt="Burn">
-            <h2>Burn</h2>
-            <p class="faction">Фракция: Беспалые</p>
-            <p class="desc">Старый скелет-пожарный, который помнит времена до падения.</p>
-            <div class="stats">
-                <span>🗡️ 70</span>
-                <span>🛡️ 50</span>
-                <span>🧠 90</span>
-            </div>
-        </div>
-
-        <!-- Crumblejon -->
-        <div class="card">
-            <img src="https://picsum.photos/200/200?random=6" alt="Crumblejon">
-            <h2>Crumblejon</h2>
-            <p class="faction">Фракция: Беспалые</p>
-            <p class="desc">Скелет-рыцарь, который буквально рассыпается на ходу.</p>
-            <div class="stats">
-                <span>🗡️ 80</span>
-                <span>🛡️ 20</span>
-                <span>🧠 40</span>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <p>🔥 Сделано фанатом для фанатов. Kenshi © Lo-Fi Games (тестовая версия)</p>
+    <footer class="site-footer">
+        <p>🔥 Kenshi © Lo-Fi Games (фанатский проект, не для коммерции)</p>
     </footer>
 </body>
 </html>
